@@ -1,5 +1,5 @@
 // deno-lint-ignore-file no-explicit-any
-import { join } from "https://deno.land/std@0.208.0/path/mod.ts";
+import { join } from "https://deno.land/std@0.212.0/path/mod.ts";
 
 export type Config = {
    FileName?: string       /* the name of a file to run */
