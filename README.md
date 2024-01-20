@@ -1,5 +1,5 @@
-# Utilies
-Utilities include:
+# Deno Dev Utilities
+Includes:
   - Browser
   - Builder
   - Config
