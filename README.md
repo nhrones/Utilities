@@ -1,6 +1,6 @@
 # Deno Dev Utilities
 Includes:
-  - Browser
+  - <a href="./Browser/">Browser</a>
   - Builder
   - Config
   - EventBus
