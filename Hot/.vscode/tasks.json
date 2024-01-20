@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+   {
+      "type": "shell",
+      "command": "hot",
+      "problemMatcher": [
+        "$deno"
+      ],
+      "label": "Deno: Run Hot"
+    },
+    {
+      "type": "deno",
+      "command": "run",
+      "args": [
+        "-A",
+        "--unstable",
+        "server.ts",
+        "example"
+      ],
+      "problemMatcher": [
+        "$deno"
+      ],
+      "label": "Deno: Run HotServe"
+    }
+  ]
+}

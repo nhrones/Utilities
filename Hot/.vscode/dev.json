@@ -1,0 +1,20 @@
+{
+   "simple": {
+      "TargetFolder": "./dist",
+      "Port": 80
+   },
+   "hot": {
+      "TargetFolder": "./dist",
+      "ServeFolder": "./dist",
+      "Port": 8080,
+      "HotPort": 9099,
+      "BuildTarget": "./dist",
+      "Entry": [
+         "./src/main.ts"
+      ],
+      "Watch": [
+         "src"
+      ],
+      "Minify": false
+   }
+}
