@@ -44,5 +44,27 @@ Copy the command below, then paste it in any commandline, and press enter.
 deno install -A -f -n serve https://raw.githubusercontent.com/nhrones/Utilities/main/Simple/serve.ts
 
 ```
-This will install a command file locally in the .deno folder.
-You then simply type `serve` on the commandline in a folder with an index.html file.
+I prefer installing a local copy.  Clone this repo then install with the command below. This will run much faster without the roundtrip to Github.
+```
+deno install -A -f -n serve serve.ts
+```
+After install you then simply type `serve` on the commandline in your project folder.
+An entry named `simple` will be placed in the `./.vscode/dev.json` file.
+```json
+{
+   "simple": {
+      "TargetFolder": "",
+      "Port": 80
+   }
+}
+```
+If your index.html file is in `./dist/`, then you would edit this json file:
+```json
+{
+   "simple": {
+      "TargetFolder": "./dist",
+      "Port": 80
+   }
+}
+```
+You may also edit the port number to serve from.
