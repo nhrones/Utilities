@@ -41,7 +41,7 @@ serve 8080 public
 ## Install a local copy
 Copy the command below, then paste it in any commandline, and press enter. 
 ```
-deno install --allow-net --allow-read --allow-run -f -n serve https://raw.githubusercontent.com/nhrones/SimpleServer/master/mod.ts
+deno install -A -f -n serve https://raw.githubusercontent.com/nhrones/Utilities/main/Simple/serve.ts
 
 ```
 This will install a command file locally in the .deno folder.
