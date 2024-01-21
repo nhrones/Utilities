@@ -14,7 +14,7 @@ This simple server will server index.html and files it requests.
 Open any folder in vscode that contains an `index.html` file.     
 Then, in the vscode terminal, enter or (copy-paste) the following: 
 ```
-deno run -A --unstable https://raw.githubusercontent.com/nhrones/SimpleServer/master/mod.ts
+deno run -A --unstable https://raw.githubusercontent.com/nhrones/Utilities/main/Simple/serve.ts
 ```
 Your browser will open and display index.html at `http://localhost:8000`
 
