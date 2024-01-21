@@ -26,4 +26,4 @@ async function handleRequest(request: Request): Promise<Response> {
 }
 
 // Trigger browser start
-openWebsite(`http://localhost:${port}`)
+await openWebsite(`http://localhost:${port}`)
