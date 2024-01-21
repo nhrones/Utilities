@@ -28,9 +28,9 @@ These will be persisted in the project for all future calls to serve.
 arg[0] = port number or target folder    
 Note: if arg[0] is a target folder, port number auto defaults to 80
 ```ts
-// serve from port to 3000
+// serve ./index.html from port 3000
 serve 3000
-// serve the folder named `dist`
+// serve ./dist/index.html` from port 80 (defaul tport)
 serve dist
 ```
 ### arg[1]
@@ -38,16 +38,16 @@ This second argument sets either the port number or the folder based on the valu
   - if arg[0] is a port number -- arg[1] should be a target folder name
   - if arg[0] is target folder -- arg[1] should be a port number
 ```ts
-// serve the folder named `public` from port 3000
+// serve './dist/index.html' from port 3000
 serve 3000 dist
-// serve the folder named `public` from port 3000
-serve dist 3000
+// serve './dist/index.html' from port 8080
+serve dist 8080
 
 ```
 Whenever these commandline args are used, the included `./.vscode/dev.json` file will be updated with these values.     
 You can at anytime edit these values manually.    
 
-After initial use, you can simply enter`serve` in the terminal and the values in `dev.json` will be used automatically.   
+After initial use, you can simply enter `serve` in the terminal and the values in `dev.json` will be used automatically.   
 
 ## Install a local copy
 Copy the command below, then paste it in any commandline, and press enter. 
