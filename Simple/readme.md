@@ -77,3 +77,8 @@ If your index.html file is in `./dist/`, then you would edit this json file:
 You may also manually edit the port number to serve from.
 
 The point of all this is to simply enter `serve` on the commandline to serve your project in the default browser!
+
+For help with this simple server, at any time enter:
+```
+serve ?
+``` 
