@@ -1,9 +1,10 @@
 
-# Simple Deno Server Example
+# Simple Deno Dev Server
 
-Used as a dev tool for running static html sites.     
+Used as a dev tool for running html sites.     
 
 This simple html server will serve an index.html file and any requests that it generates (style.css, app.js, ...).
+
 It will automaticaly launch your default browser with the index.html content.
 
 ## Usage
