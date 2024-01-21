@@ -33,7 +33,9 @@ serve 3000
 serve dist
 ```
 ### arg[1]
-This second argument sets either the port number or the folder based on the value of arg[0] -- arg[1] = target folder (if arg[0] is port number)
+This second argument sets either the port number or the folder based on the value of arg[0]:    
+  - if arg[0] is a port number -- arg[1] should be a target folder name
+  - if arg[0] is target folder -- arg[1] should be a port number
 ```ts
 // serve the folder named `public` from port 3000
 serve 3000 dist
