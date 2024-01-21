@@ -21,7 +21,8 @@ Install as detailed below, then simply enter `serve` on the commandline.
 
 ## commandline options:
 
-Assuming you've installed locally (`see below`) as `serve`, you can use the following args to configure this server. These will be persisted in the project for all future calls to serve.    
+Assuming you've installed locally (`see below`) as `serve`, you can use the following args to configure this server.    
+These will be persisted in the project for all future calls to serve.    
 
 ### arg[0]
 arg[0] = port number or target folder    
@@ -43,7 +44,8 @@ serve 3000 dist
 serve dist 3000
 
 ```
-Whenever these commandline args are used, the included `./.vscode/dev.json` file will be updated with these values. You can at anytime edit these values manually.    
+Whenever these commandline args are used, the included `./.vscode/dev.json` file will be updated with these values.     
+You can at anytime edit these values manually.    
 
 After initial use, you can simply enter`serve` in the terminal and the values in `dev.json` will be used automatically.   
 
@@ -54,7 +56,8 @@ deno install -A -f -n serve https://raw.githubusercontent.com/nhrones/Utilities/
 
 ```
 ## Install a local copy from a local repo
-I prefer installing a local copy.  Clone this repo then install with the command below. This will run much faster without the roundtrip to Github.
+I prefer installing a local copy.  Clone this repo then install with the command below.    
+This will run much faster without the roundtrip to Github.
 ```
 deno install -A -f -n serve serve.ts
 ```
