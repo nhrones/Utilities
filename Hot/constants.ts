@@ -1,4 +1,4 @@
-export const DEBUG = true
+export const DEV = true
 
 export const host = "localhost"
 export const port = 8080

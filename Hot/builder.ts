@@ -1,25 +1,18 @@
 // deno-lint-ignore-file
 import { esbuild, denoPlugin } from "./deps.ts";
+import * as CFG from './config.ts'
 
-export type buildCFG = {
-    entry: string[],
-    out: string,
-    minify: boolean
-}
- 
-/** 
- * Builds an entrypoint into a single ESM `bundle.js` output. 
- */
-export const build = async(cfg: buildCFG) => { 
-    await esbuild.build({
-      // @ts-ignore: outdated types
-        plugins: [denoPlugin()],
-        entryPoints: cfg.entry,
-        outfile: cfg.out,
-        bundle: true,
-        minify: cfg.minify,
-        banner: { js: '// deno-lint-ignore-file' },
-        format: "esm"
-    }).catch((e: any) => console.info(e));
-    esbuild.stop();
+/** Build an entrypoint into a single ESM `bundle.js` output. */
+export const build = async () => {
+   await esbuild.build({
+      /// @ts-ignore: outdated types
+      plugins: [denoPlugin()],
+      entryPoints: CFG.ENTRY,
+      outfile: CFG.OUT,
+      bundle: true,
+      minify: CFG.MINIFY,
+      banner: { js: '// deno-lint-ignore-file' },
+      format: "esm"
+   }).catch((e: any) => console.info(e));
+   esbuild.stop();
 }

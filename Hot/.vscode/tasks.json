@@ -16,12 +16,12 @@
         "-A",
         "--unstable",
         "server.ts",
-        "example"
+        "dist"
       ],
       "problemMatcher": [
         "$deno"
       ],
-      "label": "Deno: Run HotServe"
+      "label": "Deno: Run this Hot Server"
     }
   ]
 }
