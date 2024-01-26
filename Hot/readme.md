@@ -23,23 +23,21 @@ An index.html file with the following:
   - should have one or more stylesheets     
      \<link rel="stylesheet" href="./style.css"\>
      
-  - for bundling with esbuild, the client code needs to be   
-  in a root `src` folder with a `main.ts` as the app entry point.
-
-**See the /src/main.ts file above**  
+  - for bundling with esbuild, a configuration must be included
+ 
 ## A good example hot app is: https://github.com/nhrones/BuenoCache/
 Checkout **_/src/_** and **_/dist/bundle.js/_** there.
 
 ## Code injection (injector.ts)
 The hot-browser-refresh is accomplished by emdedding a temporary   
 script tag at the end of the index.html-body.   
-The injected code registers for Server Sent Events from the Hot-server.   
-When Hot-Serve detects changes that rebuild bundle.js, it will stream an event   
-to the embedded script that will force a browser refresh.    
-This code injection happens only when the content of index.html is served to    
-the browser; it does not modify the actual index.html file.
-```
-NOTE: We inject a script tag below the body-end-tag </body>.
+The injected code registers a WebSocket client on the Hot-server.   
+When Hot-Serve detects changes that rebuild bundle.js, it will send a   
+message to the embedded socket that will force a browser refresh. 
+``` 
+NOTE: Code injection happens only when the content of index.html is     
+served to the browser; it will not mutate the index.html file.
+We inject our script tag below the body-end-tag </body>.
 Anything that exists below the body-end-tag will be displaced    
 below this injected script.   
 ``` 
@@ -48,7 +46,7 @@ See the example app in the `./dist` folder
 ## Usage
 To install a local copy, enter:
 ```
-deno install -n hot -A --unstable https://raw.githubusercontent.com/nhrones/Hot/master/server.ts 
+deno install -n hot -A --unstable https://raw.githubusercontent.com/nhrones/Utilities/main/Hot/server.ts 
 ```  
 Then, in a terminal in the root of your project, just enter `hot` to run this service. If the client code is not in the root folder, enter the folder name as the first cammand line arg; in this case you'll enter -- `hot example`.
 
