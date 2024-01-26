@@ -1,0 +1,15 @@
+{
+   "version": "2.0.0",
+   "tasks": [
+      {
+         "label": "RUN-Z",
+         "type": "shell",
+         "command": "run z.ts"
+      },
+      {
+         "label": "RUN",
+         "type": "shell",
+         "command": "serve"
+      }
+   ]
+}
