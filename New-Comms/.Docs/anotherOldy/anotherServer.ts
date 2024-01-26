@@ -4,9 +4,7 @@ export const DEBUG = (Deno.env.get("DEBUG") === "true") || true
 if (DEBUG) console.log(`Serving Websockets`);
 export const connections: Set<SignalConnection> = new Set()
 
-//
 // Serves HTTP requests with the given handler
-//
 Deno.serve((request: Request):Promise<Response> => {
     try {
         if (request.headers.get("upgrade") === "websocket") {

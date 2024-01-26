@@ -1,5 +1,5 @@
 
-import { connectClient } from './signalService.ts'
+import { registerClient } from './signalService.ts'
 
 /* ==============================================
  * From my old WebRTC signaller 
@@ -18,7 +18,7 @@ async function handleRequest(request: Request): Promise<Response> {
         // is this a websocket request? 
         if (upgrade === "websocket") {
             const { socket, response } = Deno.upgradeWebSocket(request);
-            connectClient(socket, request.headers.get('sec-websocket-key'));
+            registerClient(socket, request.headers.get('sec-websocket-key'));
             return response
         }
         const errMsg = `Error: Request was not a valid WebSocket request! (405)`

@@ -3,19 +3,6 @@
  * From my old WebRTC-WS signaller 
  ================================================*/
 
-/* 
-WebRTC Signalling
-  There are three basic types of information that need to be exchanged during signaling:
-  1. Control messages used to set up, open, and close the communication channel, and handle errors.
-  2. Information needed in order to set up the connection: the IP addressing and port information 
-     needed for the peers to be able to talk to one another.   
-  3. Media capability negotiation: what codecs and media data formats can the peers understand? 
-     These need to be agreed upon before the WebRTC session can begin.   
-  4. Only once signaling has been successfully completed can the true process of opening the WebRTC peer connection begin.
-
-  This signaling service does not need to understand or do anything with the data being exchanged.
-  */
-
 /** 
  * collection of WebSocket signal-clients 
  */
