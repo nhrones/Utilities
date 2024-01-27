@@ -1,10 +1,10 @@
 import { debounce, join, openWebsite, serveFile } from './deps.ts'
-import { DEV } from './constants.ts'
+//import { DEV } from './constants.ts'
 import * as CFG from './config.ts'
 import { build } from './builder.ts'
-import { host, port } from './constants.ts'
+//import { host, port } from './constants.ts'
 import { inject } from './injector.ts'
-
+const {DEV} = CFG 
 /** 
  * The folder that contains the index.html to be served   
  * this option would be entered as cli first arg - Deno.args[0]  
@@ -17,7 +17,7 @@ let hotSocket: WebSocket
 
 
 /** Start the server and handle all http requests */
-Deno.serve({ hostname: host, port: port },
+Deno.serve({port: CFG.Port },
    async (request: Request): Promise<Response> => {
 
       let { pathname } = new URL(request.url);
@@ -84,9 +84,7 @@ Deno.serve({ hostname: host, port: port },
 })
 
 // launch the browser with our index.html page
-openWebsite(`http://localhost:${port}`)
-
-if (DEV) console.log(`CFG.WatchFolders: ', ${CFG.Watch}, type = ${typeof CFG.Watch}`)
+openWebsite(`http://localhost:${CFG.Port}`)
 
 // Watch for file changes in selected folders
 const fileWatch = Deno.watchFs(CFG.Watch);
@@ -113,7 +111,7 @@ const handleFileChange = debounce(
          const action = (path.endsWith("css"))
             ? 'refreshcss'
             : 'reload';
-         console.info(`hotSocket ${hotSocket}`)
+
          if (hotSocket && hotSocket.readyState === 1) { // 1 = open
             if (DEV) console.log(`Action[${action}]  sent to client!`)
             hotSocket.send(action)

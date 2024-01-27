@@ -1,25 +1,25 @@
-export const DEV = true
+//export const DEV = true
 
-export const host = "localhost"
-export const port = 8080
+//export const host = "localhost"
+//export const port = 8080
 
-export type CTX = {
-    cwd: string    
-    fileName: string
-    port: number
-    url: string
-}
+// export type CTX = {
+//     cwd: string    
+//     fileName: string
+//     port: number
+//     url: string
+// }
  
-export const ctx: CTX = {
-    cwd: Deno.cwd(),
-    fileName: './server.ts',
-    port: port,
-    url: 'localhost',
-}
+// export const ctx: CTX = {
+//     cwd: Deno.cwd(),
+//     fileName: './server.ts',
+//     port: port,
+//     url: 'localhost',
+// }
 
-export const setCTX = (newCTX:CTX ) => {
-    ctx.cwd = newCTX.cwd
-    ctx.fileName = newCTX.fileName
-    ctx.port = newCTX.port
-    ctx.url = newCTX.url
-}
+// export const setCTX = (newCTX:CTX ) => {
+//     ctx.cwd = newCTX.cwd
+//     ctx.fileName = newCTX.fileName
+//     ctx.port = newCTX.port
+//     ctx.url = newCTX.url
+// }

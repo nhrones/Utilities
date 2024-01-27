@@ -53,16 +53,11 @@ export function getConfig(
    const thisNamedCfg = (name in devCfg)
       ? devCfg[name]
       : defaultCfg
-
+   
    // adjust thisCfg with any passed in args - args take priority
    const thisNewCfg = (args.length)
       ? unpackArgs(args, thisNamedCfg) // mutate defaults with any cli-args
       : thisNamedCfg
-
-   // correct any 'root' value
-   if (thisNewCfg.targetFolder && thisNewCfg.targetFolder === 'root') {
-      thisNewCfg.targetFolder = ""
-   }
 
    // save it
    persistCfg(name, thisNewCfg)
