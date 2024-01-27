@@ -1,8 +1,6 @@
 import { debounce, join, openWebsite, serveFile } from './deps.ts'
-//import { DEV } from './constants.ts'
 import * as CFG from './config.ts'
 import { build } from './builder.ts'
-//import { host, port } from './constants.ts'
 import { inject } from './injector.ts'
 const {DEV} = CFG 
 /** 
