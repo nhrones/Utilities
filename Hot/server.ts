@@ -10,7 +10,7 @@ import { inject } from './injector.ts'
  * this option would be entered as cli first arg - Deno.args[0]  
  * default = root folder
  */
-const indexFolder = Deno.args[0] || CFG.ServeFolder;
+const indexFolder = Deno.args[0] || CFG.ServeFrom;
 
 /** our hot reload WebSocket */
 let hotSocket: WebSocket

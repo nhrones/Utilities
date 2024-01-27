@@ -7,10 +7,10 @@ export const build = async () => {
    await esbuild.build({
       /// @ts-ignore: outdated types
       plugins: [denoPlugin()],
-      entryPoints: CFG.ENTRY,
-      outfile: CFG.OUT,
+      entryPoints: CFG.Entry,
+      outfile: CFG.Out,
       bundle: true,
-      minify: CFG.MINIFY,
+      minify: CFG.Minify,
       banner: { js: '// deno-lint-ignore-file' },
       format: "esm"
    }).catch((e: any) => console.info(e));

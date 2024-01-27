@@ -1,8 +1,9 @@
 import { Config, getConfig } from './deps.ts'
 
-export const DEBUG = false
+export const DEV = false
 
-// if args0 = -h or ?, show help then exit
+// If the first CLI argument (args[0]) = -h or ?
+// show help text then just exit
 if (Deno.args[0] === '-h' || Deno.args[0] === '?') {
    console.log(`
 Build Help --   
@@ -19,23 +20,25 @@ Minify: boolean - true or false (defaults to false)`
    Deno.exit(0)
 }
 
-// requested initial default configuration
+// initial default configuration for this app
 const requiredCfg = {
-   "Out": "./dist",     // the folder to place esBuild bundle.js in 
-   "Serve": "./",       // the folder to serve index.html from 
-   "Port": 8080,
+   "Out": "./dist",              // the folder to place esBuild bundle.js in 
+   "Serve": "./",                // the folder to serve index.html from 
+   "Port": 80,                   // the local port to serve from
    "Entry": ["./src/main.ts"] ,  // an array of entry files to start esBuild from
    "Watch": ["src", "dist"],     // Array of folders to watch for changes in.
    "Minify": false               // minify the esbuild bundle?
 } satisfies Config
 
 
-// gets an existing config, or builds one
+// gets an existing configuration from ./.vscode/dev.json
+// if not found, just build it from requiredCfg above
 const cfg = getConfig("hot", Deno.args, requiredCfg)
-//server takes just ServeFolder and WatchFolders
-export const ServeFolder = cfg.Serve ?? ""
+
+// export all configuration constants
+export const ServeFrom = cfg.Serve ?? ""
 export const Port = cfg.Port ?? 80
 export const Watch = cfg.Watch ?? ["src", "dist"]
-export const MINIFY = cfg.Minify ?? false
-export const ENTRY = cfg.Entry ?? ['./src/main.ts']
-export const OUT = (cfg.Out && cfg.Out.length > 0) ? `./${cfg.Out}/bundle.js` : './bundle.js'
+export const Minify = cfg.Minify ?? false
+export const Entry = cfg.Entry ?? ['./src/main.ts']
+export const Out = (cfg.Out && cfg.Out.length > 0) ? `./${cfg.Out}/bundle.js` : './bundle.js'
