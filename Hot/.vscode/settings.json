@@ -2,8 +2,4 @@
     "deno.enable": true,
     "deno.lint": true,
     "deno.unstable": true,
-    "editor.fontFamily": "Cascadia Code SemiLight",
-    "debug.console.fontFamily": "Fira Code",
-    "editor.find.addExtraSpaceOnTop": true,
-    "terminal.integrated.fontFamily": "Fira Code",
 }

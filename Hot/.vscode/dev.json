@@ -1,8 +1,4 @@
 {
-   "simple": {
-      "Serve": "./dist",
-      "Port": 80
-   },
    "hot": {
       "Out": "./dist",
       "Serve": "./dist",

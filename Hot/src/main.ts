@@ -9,7 +9,7 @@ const btn = document.getElementById('btn') as HTMLButtonElement ;
 btn.onclick = () => {
     log(`Click count = ${cnt++}  `)
 }
-        
+
 /** on-screen logger */
 export const log = (what: string, whatElse = null, and = null) => {
     let text = `${what.padEnd(30, '-')} `;
