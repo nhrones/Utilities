@@ -22,12 +22,12 @@ Minify: boolean - true or false (defaults to false)`
 // initial default configuration for this app
 const requiredCfg = {
    "DEV": false,
-   "Out": "./dist",              // the folder to place esBuild bundle.js in 
-   "Serve": "./",                // the folder to serve index.html from 
-   "Port": 80,                   // the local port to serve from
    "Entry": ["./src/main.ts"] ,  // an array of entry files to start esBuild from
+   "Minify": false,               // minify the esbuild bundle?
+   "Out": "./dist",              // the folder to place esBuild bundle.js in 
+   "Port": 80,                   // the local port to serve from
+   "Serve": "./",                // the folder to serve index.html from 
    "Watch": ["src", "dist"],     // Array of folders to watch for changes in.
-   "Minify": false               // minify the esbuild bundle?
 } satisfies Config
 
 
@@ -37,9 +37,9 @@ const cfg = getConfig("hot", Deno.args, requiredCfg)
 
 // export all configuration constants
 export const DEV = cfg.DEV ?? false
-export const ServeFrom = cfg.Serve ?? ""
-export const Port = cfg.Port ?? 80
-export const Watch = cfg.Watch ?? ["src", "dist"]
-export const Minify = cfg.Minify ?? false
 export const Entry = cfg.Entry ?? ['./src/main.ts']
+export const Minify = cfg.Minify ?? false
 export const Out = (cfg.Out && cfg.Out.length > 0) ? `./${cfg.Out}/bundle.js` : './bundle.js'
+export const Port = cfg.Port ?? 80
+export const ServeFrom = cfg.Serve ?? ""
+export const Watch = cfg.Watch ?? ["src", "dist"]
