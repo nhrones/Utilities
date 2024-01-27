@@ -113,8 +113,9 @@ const handleFileChange = debounce(
          const action = (path.endsWith("css"))
             ? 'refreshcss'
             : 'reload';
-         if (DEV) console.log(`Action[${action}]  sent to client!`)
+         console.info(`hotSocket ${hotSocket}`)
          if (hotSocket && hotSocket.readyState === 1) { // 1 = open
+            if (DEV) console.log(`Action[${action}]  sent to client!`)
             hotSocket.send(action)
          }
       }

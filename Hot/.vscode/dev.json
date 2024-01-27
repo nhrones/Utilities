@@ -4,17 +4,15 @@
       "Port": 80
    },
    "hot": {
-      "TargetFolder": "dist",
-      "ServeFolder": "dist",
+      "TargetFolder": "./dist",
+      "ServeFolder": "./",
       "Port": 8080,
-      "HotPort": 9099,
-      "BuildTarget": "dist",
+      "BuildTarget": "./dist",
       "Entry": [
          "./src/main.ts"
       ],
       "Watch": [
-         "src",
-         "dist"
+         "src"
       ],
       "Minify": false
    }

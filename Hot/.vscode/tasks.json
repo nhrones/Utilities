@@ -7,21 +7,7 @@
       "problemMatcher": [
         "$deno"
       ],
-      "label": "Deno: Run Hot"
-    },
-    {
-      "type": "deno",
-      "command": "run",
-      "args": [
-        "-A",
-        "--unstable",
-        "server.ts",
-        "dist"
-      ],
-      "problemMatcher": [
-        "$deno"
-      ],
-      "label": "Deno: Run this Hot Server"
+      "label": "HOT"
     }
   ]
 }

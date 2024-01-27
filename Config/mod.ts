@@ -3,12 +3,9 @@ import { join } from "https://deno.land/std@0.212.0/path/mod.ts";
 
 export type Config = {
    FileName?: string       /* the name of a file to run */
-   TargetFolder?: string   /* the folder to run from */
-   ServeFolder?: string    /* the folder to serve index.html from */
-   BuildTarget?: string    /* the folder to place the build bundle in */
+   Serve?: string          /* the folder to serve index.html from */
    Watch?: string[]        /* Array of folders to watch for changes in. (to trigger a build) */
    Port?: number           /* a port number for the server or a service to use*/
-   HotPort?: number        /* the SSE port number for HotServer to use */
    CWD?: string            /* current working directory */
    Out?: string            /* esbuild outfile */
    Entry?: string[]        /* an array of entry files to start esBuild from */
@@ -19,13 +16,12 @@ export type Config = {
 const CfgFilePath = "./.vscode/dev.json"
 
 /** A default configuration file */
-export const DefaultCFG = {
+export const DefaultCFG: Config = {
    FileName: "mod.ts",
-   ServeFolder: "./",
-   BuildTarget: "dist",
+   Serve: "./",
+   Out: "dist",
    Watch: ["src"],
    Port: 80,
-   HotPort: 9001,
    CWD: "",
    Minify: false
 }

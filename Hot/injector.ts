@@ -47,11 +47,6 @@ const injectString = `(function () {
                const elem = sheets[i]
                const parent = elem.parentElement || head
                parent.removeChild(elem)
-               const rel = elem.rel
-               if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-                  const url = elem.href.replace(/(&|\?)_cacheOverride=d+/, "")
-                  elem.href = url + (url.indexOf("?") >= 0 ? "&" : "?") + "_cacheOverride=" + new Date().valueOf()
-               }
                parent.appendChild(elem)
             }
          } else if (action === "reload") {
