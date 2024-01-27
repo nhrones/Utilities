@@ -10,7 +10,7 @@ import { inject } from './injector.ts'
  * this option would be entered as cli first arg - Deno.args[0]  
  * default = root folder
  */
-const targetFolder = Deno.args[0] || CFG.ServeFolder;
+const indexFolder = Deno.args[0] || CFG.ServeFolder;
 
 /** our hot reload WebSocket */
 let hotSocket: WebSocket
@@ -50,9 +50,9 @@ Deno.serve({ hostname: host, port: port },
          pathname += "index.html";
       }
 
-      // modify our path based on our target folder
-      const fullPath = (targetFolder.length > 0)
-         ? join(Deno.cwd(), targetFolder, pathname)
+      // modify our path based on our index folder
+      const fullPath = (indexFolder.length > 0)
+         ? join(Deno.cwd(), indexFolder, pathname)
          : join(Deno.cwd(), pathname);
 
       if (DEV) console.log(`fullPath = ${fullPath}`)
@@ -86,10 +86,10 @@ Deno.serve({ hostname: host, port: port },
 // launch the browser with our index.html page
 openWebsite(`http://localhost:${port}`)
 
-if (DEV) console.log(`CFG.WatchFolders: ', ${CFG.WatchFolders}, type = ${typeof CFG.WatchFolders}`)
+if (DEV) console.log(`CFG.WatchFolders: ', ${CFG.Watch}, type = ${typeof CFG.Watch}`)
 
 // Watch for file changes in selected folders
-const fileWatch = Deno.watchFs(CFG.WatchFolders);
+const fileWatch = Deno.watchFs(CFG.Watch);
 
 // handles all file changes for Hot refresh
 const handleFileChange = debounce(

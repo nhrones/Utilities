@@ -34,12 +34,12 @@ if (Deno.args[0]) {
  * required Cfg
  */
 const requiredCfg = {
-   "TargetFolder": "",
+   "Serve": "",
    "Port": 80
 } satisfies Config
 
 // gets an existing config, or builds one
 const cfg = getConfig('simple', Deno.args, requiredCfg)
 
-export const folder = cfg.TargetFolder || ""
+export const folder = cfg.Serve || ""
 export const port = cfg.Port || 80
