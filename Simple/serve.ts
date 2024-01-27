@@ -1,7 +1,7 @@
 
 import { openWebsite, join, serveFile } from "./deps.ts";
 
-import { folder, port } from './config.ts'
+import { DEV, folder, port } from './config.ts'
 
 
 // Start the server -> routes all requests to the handler below
@@ -18,7 +18,7 @@ async function handleRequest(request: Request): Promise<Response> {
       ? join(Deno.cwd() + '\\' + folder + pathname)
       : join(Deno.cwd() + '.' + pathname);
 
-   console.log(`Serving ${fullPath}`); // show what was requested
+   if (DEV) console.log(`Serving ${fullPath}`); // show what was requested
    // find the file -> get the content -> return it in a response
    const resp = await serveFile(request, fullPath)
    resp.headers.append("Cache-Control", "no-store")

@@ -1,6 +1,6 @@
 import { Config, getConfig } from './deps.ts'
 
-//export const DEBUG = false
+export const DEV = false
 
 if (Deno.args[0]) {
    // if args0 = -h or ?, show help then exit

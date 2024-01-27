@@ -2,14 +2,22 @@
 import { join } from "https://deno.land/std@0.212.0/path/mod.ts";
 
 export type Config = {
-   FileName?: string       /* the name of a file to run */
-   Serve?: string          /* the folder to serve index.html from */
-   Watch?: string[]        /* Array of folders to watch for changes in. (to trigger a build) */
-   Port?: number           /* a port number for the server or a service to use*/
-   CWD?: string            /* current working directory */
-   Out?: string            /* esbuild outfile */
-   Entry?: string[]        /* an array of entry files to start esBuild from */
-   Minify?: boolean        /* minify the esbuild bundle? */
+   /** current working directory */
+   CWD?: string
+   /** a boolean flag used to enable logging or ? */
+   DEV?: boolean
+   /** an array of entry files to start esBuild from */
+   Entry?: string[]
+   /** minify the esbuild bundle? */
+   Minify?: boolean
+   /** esbuild outfile */
+   Out?: string
+   /** a port number for the server or a service to use*/
+   Port?: number
+   /** the folder to serve index.html from */
+   Serve?: string
+   /** Array of folders to watch for changes in. (to trigger a build) */
+   Watch?: string[]
 }
 
 /** The full path for the dev.json configuration file */
@@ -17,14 +25,14 @@ const CfgFilePath = "./.vscode/dev.json"
 
 /** A default configuration file */
 export const DefaultCFG: Config = {
-   FileName: "mod.ts",
-   Serve: "./",
-   Out: "dist",
-   Watch: ["src"],
-   Port: 80,
    CWD: "",
-   Minify: false
-}
+   DEV: true,
+   Minify: false,
+   Out: "dist",
+   Port: 80,
+   Serve: "./",
+   Watch: ["src"],
+} as Config
 
 /** getConfig async function
  *  @param {string} name - the name of the configuration object
@@ -38,7 +46,7 @@ export function getConfig(
    defaultCfg: Config
 ): Config {
 
-   // get any existing cfg from dev.json
+   // get any existing cfg from ./.vscode/dev.json
    const devCfg = getCfgObj()
 
    // first find existing cfg, else use passed in defaultCfg
@@ -46,7 +54,7 @@ export function getConfig(
       ? devCfg[name]
       : defaultCfg
 
-   // adjust thisCfg with any passed in args - args are priority
+   // adjust thisCfg with any passed in args - args take priority
    const thisNewCfg = (args.length)
       ? unpackArgs(args, thisNamedCfg) // mutate defaults with any cli-args
       : thisNamedCfg
