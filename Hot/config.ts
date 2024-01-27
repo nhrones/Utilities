@@ -1,6 +1,5 @@
 import { Config, getConfig } from './deps.ts'
 
-export const DEV = false
 
 // If the first CLI argument (args[0]) = -h or ?
 // show help text then just exit
@@ -22,6 +21,7 @@ Minify: boolean - true or false (defaults to false)`
 
 // initial default configuration for this app
 const requiredCfg = {
+   "DEV": false,
    "Out": "./dist",              // the folder to place esBuild bundle.js in 
    "Serve": "./",                // the folder to serve index.html from 
    "Port": 80,                   // the local port to serve from
@@ -36,6 +36,7 @@ const requiredCfg = {
 const cfg = getConfig("hot", Deno.args, requiredCfg)
 
 // export all configuration constants
+export const DEV = cfg.DEV ?? false
 export const ServeFrom = cfg.Serve ?? ""
 export const Port = cfg.Port ?? 80
 export const Watch = cfg.Watch ?? ["src", "dist"]

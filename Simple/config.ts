@@ -1,7 +1,5 @@
 import { Config, getConfig } from './deps.ts'
 
-export const DEV = false
-
 if (Deno.args[0]) {
    // if args0 = -h or ?, show help then exit
    if (Deno.args[0] === '-h' || Deno.args[0] === '?') {
@@ -34,12 +32,14 @@ if (Deno.args[0]) {
  * required Cfg
  */
 const requiredCfg = {
+   "DEV": true,
+   "Port": 80,
    "Serve": "",
-   "Port": 80
 } satisfies Config
 
 // gets an existing config, or builds one
 const cfg = getConfig('simple', Deno.args, requiredCfg)
 
+export const DEV = cfg.DEV || false
 export const folder = cfg.Serve || ""
 export const port = cfg.Port || 80

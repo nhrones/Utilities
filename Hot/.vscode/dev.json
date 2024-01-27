@@ -1,5 +1,6 @@
 {
    "hot": {
+      "DEV": true,
       "Out": "./dist",
       "Serve": "./dist",
       "Port": 80,

@@ -1,6 +1,7 @@
 {
    "simple": {
-      "Serve": "dist",
-      "Port": 80
+      "DEV": true,
+      "Port": 80,
+      "Serve": "dist"
    }
 }
