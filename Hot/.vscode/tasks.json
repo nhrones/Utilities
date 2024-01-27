@@ -4,9 +4,6 @@
    {
       "type": "shell",
       "command": "hot",
-      "problemMatcher": [
-        "$deno"
-      ],
       "label": "HOT"
     }
   ]

@@ -5,8 +5,8 @@
    },
    "hot": {
       "Out": "./dist",
-      "Serve": "./",
-      "Port": 8080,
+      "Serve": "./dist",
+      "Port": 80,
       "Entry": [
          "./src/main.ts"
       ],
