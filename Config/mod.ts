@@ -30,7 +30,7 @@ export const DefaultCFG: Config = {
    Minify: false,
    Out: "dist",
    Port: 80,
-   Serve: "./",
+   Serve: "",
    Watch: ["src"],
 } as Config
 

@@ -1,5 +1,5 @@
 /// <reference lib="dom" />
-           
+             
 /** our counter */
 let cnt = 1;
 

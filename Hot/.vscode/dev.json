@@ -1,16 +1,16 @@
 {
    "hot": {
       "DEV": true,
-      "Out": "./dist",
-      "Serve": "./dist",
-      "Port": 80,
       "Entry": [
          "./src/main.ts"
       ],
+      "Minify": false,
+      "Out": "dist",
+      "Port": 80,
+      "Serve": "dist",
       "Watch": [
          "src",
          "dist"
-      ],
-      "Minify": false
+      ]
    }
 }
