@@ -12,14 +12,16 @@ Usage:
 Commandline arg0:
 -h or ? = this help
 else ...
-Commandline arg0 = Out: string - default = "dist"
-Commandline arg1 = Entry: string[] - default = ["./src/main.ts"]
-Commandline arg2 = Minify: boolean - default = false
+
+Commandline arg0 = Build Entry: string[] - default = ["./src/main.ts"]
+Commandline arg1 = Build Minify: boolean - default = false
+Commandline arg2 = Build Out: string - default = "dist"
 
 /src/dev.json - build:
-Out: string - the folder to place the bundle in (defaults to 'dist')
 Entry: string[] - default = ["./src/main.ts"]
-Minify: boolean - true or false (defaults to false)`
+Minify: boolean - true or false (defaults to false)
+Out: string - the folder to place the bundle in (defaults to 'dist')`
+
    );
    Deno.exit(0)
 }
@@ -29,10 +31,10 @@ Minify: boolean - true or false (defaults to false)`
  * Any commandline-args must follow the order of this cfg 
 */
 const requiredCfg = {
-   "Out": "dist",                /* deno.arg[0] */
-   "FileName": "bundle.js",
-   "Entry": ["./src/main.ts"],   /* deno.arg[1] */
-   "Minify": false               /* deno.arg[2] */
+   "BundleName": "",
+   "Entry": ["./src/main.ts"],   /* deno.arg[0] */
+   "Minify": false,              /* deno.arg[1] */
+   "Out": "dist",                /* deno.arg[2] */
 } satisfies Config
 
 /** gets an existing config, or builds one.
@@ -40,9 +42,9 @@ const requiredCfg = {
  */
 const cfg = getConfig("build", Deno.args, requiredCfg)
 
-export const Minify = cfg.Minify || false
-export const Name = cfg.FileName || "bundle.js"
 export const Entry = cfg.Entry || ["./src/main.ts"]
+export const Minify = cfg.Minify || false
+export const Name = cfg.BundleName || "bundle.js"
 export const Out = (cfg.Out && cfg.Out.length > 0)
    ? `./${cfg.Out}/${Name}`
    : `./${Name}`

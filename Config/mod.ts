@@ -2,6 +2,8 @@
 import { join } from "https://deno.land/std@0.212.0/path/mod.ts";
 
 export type Config = {
+   /** file name for the build bundle */
+   BundleName?: string
    /** current working directory */
    CWD?: string
    /** a boolean flag used to enable logging or ? */
@@ -25,6 +27,7 @@ const CfgFilePath = "./.vscode/dev.json"
 
 /** A default configuration file */
 export const DefaultCFG: Config = {
+   BundleName: "",
    CWD: "",
    DEV: true,
    Minify: false,
