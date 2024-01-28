@@ -1,0 +1,16 @@
+{
+   "zbuild": {
+      "Entry": [
+         "./src/main.ts"
+      ],
+      "Minify": false,
+      "Out": "dist"
+   },
+   "build": {
+      "Entry": [
+         "./src/main.ts"
+      ],
+      "Minify": false,
+      "Out": "dist"
+   }
+}
