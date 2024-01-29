@@ -31,7 +31,7 @@ Out: string - the folder to place the bundle in (defaults to 'dist')`
  * Any commandline-args must follow the order of this cfg 
 */
 const requiredCfg = {
-   "BundleName": "",
+   "BundleName": "bundle.js",             
    "Entry": ["./src/main.ts"],   /* deno.arg[0] */
    "Minify": false,              /* deno.arg[1] */
    "Out": "dist",                /* deno.arg[2] */
