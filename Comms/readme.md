@@ -32,11 +32,4 @@ The main issue with this architecture is that all peers are responsible for main
 <br/>
 
 ![Alt text](./media/comms.png)
- 
-<br/>
-
-## See it: 
-Open two instances of https://fresh-dice.deno.dev/
-
-After the second instance(Peer) establishes a connection, the signal-server is no longer required.  All further game communication is via the established `WebRTC-dataChannel`.      
-You can view the RTC coms logs by opening the chrome devtools console.    
+  
