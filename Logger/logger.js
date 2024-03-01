@@ -1,17 +1,14 @@
 
-
 /**
- * Description placeholder
- * @date 2/24/2024 - 7:51:07 PM
+ * The logger target pre-element
  *
  * @type {HTMLPreElement}
  */
 let logger
 
 /**
- * console.log UI proxy
- * @export
- * @callback Log
+ * A console.log UI proxy
+ *
  * @param {...any} _args
  */
 export function log(_args) {
