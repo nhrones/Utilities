@@ -12,7 +12,7 @@ Includes the following:
   - <a href="https://github.com/nhrones/Utilities/blob/main/JS-EventBus/readme.
   md">JS-EventBus</a> - A **_strongly-typed_** javascript event bus 
 
-    - <a href="https://github.com/nhrones/Utilities/blob/main/EventBus/readme.
+  - <a href="https://github.com/nhrones/Utilities/blob/main/EventBus/readme.
   md">TS-EventBus</a> - A **_strongly-typed_** Typescript event bus 
 
   - <a href="https://github.com/nhrones/Utilities/blob/main/Hot/readme.md">Hot</a> -  A dev-server with **_auto-bundle-on-src-change_** plus **_hot-browser-refresh_**
