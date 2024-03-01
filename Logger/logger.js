@@ -1,9 +1,21 @@
 
-let logger = null
 
-/** a console.log proxy */
-export function log() {
-   if (logger === null) init()
+/**
+ * Description placeholder
+ * @date 2/24/2024 - 7:51:07 PM
+ *
+ * @type {HTMLPreElement}
+ */
+let logger
+
+/**
+ * console.log UI proxy
+ * @export
+ * @callback Log
+ * @param {...any} _args
+ */
+export function log(_args) {
+   if (!logger) init()
    for (let i = 0; i < arguments.length; i++) {
      if (typeof arguments[i] == 'object') {
       logger.textContent += (JSON && JSON.stringify 

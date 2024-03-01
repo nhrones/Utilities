@@ -52,6 +52,33 @@ Then, in a terminal in the root of your project, just enter `hot` to run this se
 
 Your browser will launch automatically, opening your web-app.
 
+## Important:
+Hot when first used in a project folder, will add a config json entry     
+in **_./.vscode/dev.json_**.    
+You can edit this config json to customise hot for this project.
+```json
+{
+   "hot": {
+      "DEV": true,
+      "Entry": [
+         "./src/main.ts"
+      ],
+      "Minify": false,
+      "Out": "dist",
+      "Port": 80,
+      "Serve": "dist",
+      "Watch": [
+         "src",
+         "dist"
+      ]
+   }
+}
+```
+Hot will populate this config on first use (when one is not found).
+The above hot-config is the default. I deals mainly with esbuild, watch, and serve params.
+You can find these setting in:
+https://github.com/nhrones/Utilities/blob/main/Config/readme.md
+
 ## Try it
 To run this service from Git! 
 
