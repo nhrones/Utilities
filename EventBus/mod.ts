@@ -13,7 +13,7 @@ export function buildEventBus<T extends EventContract<T>>(): EventBus<T> {
     */
    const eventHandlers: Map<string, EventHandler[]> = new Map()
 
-   let newEventBus: EventBus<T> = {
+   const newEventBus: EventBus<T> = {
 
       /** 
        * on - registers a handler function to be executed when an event is fired
