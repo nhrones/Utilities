@@ -21,7 +21,8 @@ async function handleRequest(request: Request): Promise<Response> {
    if (DEV) console.log(`Serving ${fullPath}`); // show what was requested
    // find the file -> get the content -> return it in a response
    const resp = await serveFile(request, fullPath)
-   resp.headers.append("Cache-Control", "no-store")
+   resp.headers.append("Cache-Control", "no-store"),
+   resp.headers.append("Access-Control-Allow-Origin", "*")
    return resp  
 }
 
