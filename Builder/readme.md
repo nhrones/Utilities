@@ -29,3 +29,7 @@ deno install -n build -A https://raw.githubusercontent.com/nhrones/Utilities/mai
 ```
 Once installed, just enter **_build_**, from the root of a project.
 With the above configuration, you should see a new _bundle.js_ in the ./dist/ folder. 
+
+## Note: 
+after Deno install, and the first use in a project, you can edit the initial _./vscode/dev.json/_ file to customize it for your project.    
+This cfg will then be used each time you call _build_ in the project root.
